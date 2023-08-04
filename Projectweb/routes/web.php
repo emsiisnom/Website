@@ -22,5 +22,6 @@ Route::get('admin/login', [AdminController::class, 'login'])->name('adminLogin')
 Route::post('admin/loginProcess', [AdminController::class, 'loginProcess'])->name('adminLoginProcess');
 Route::post('admin/logout', [AdminController::class, 'logout'])->name('adminLogout');
 
-Route::get('admin/product-list', [AdminController::class, 'list'])->middleware('isLoggedIn');
-Route::get('admin/product-add', [AdminController::class, 'add'])->middleware('isLoggedIn');
+Route::get('admin/product-list', [AdminController::class, 'list']);//->middleware('isLoggedIn');
+Route::get('admin/product-add', [AdminController::class, 'add']);//->middleware('isLoggedIn');
+Route::post('admin/product-save', [AdminController::class, 'save']);

@@ -55,4 +55,17 @@ class AdminController extends Controller
         $cat = Category::get();
         return view('admin.product-add', compact('cat'));
     }
+
+    public function save(Request $request)
+    {
+        $p = new Product();
+        $p->productID = $request->id;
+        $p->productName = $request->name;
+        $p->productPrice = $request->price;
+        $p->productDetails = $request->details;
+        $p->productImage = $request->image;
+        $p->catID = $request->category;
+        $p->save();
+        return redirect()->back()->with('success', 'Product added successfully!');
+    }
 }

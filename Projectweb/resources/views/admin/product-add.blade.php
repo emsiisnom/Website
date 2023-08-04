@@ -4,79 +4,45 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Admin Dashboard</title>
+    <title>Stellar Admin</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/ionicons/dist/css/ionicons.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/iconfonts/flag-icon-css/css/flag-icon.min.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/css/vendor.bundle.base.css">
-    <link rel="stylesheet" href="../admin/assets/vendors/css/vendor.bundle.addons.css">
+    <link rel="stylesheet" href="../admin/vendors/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href="../admin/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../admin/vendors/css/vendor.bundle.base.css">
     <!-- endinject -->
-    <!-- plugin css for this page -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../admin/vendors/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" href="../admin/vendors/chartist/chartist.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="../admin/assets/css/shared/style.css">
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="../admin/assets/css/demo_1/style.css">
-    <!-- End Layout styles -->
-    <link rel="shortcut icon" href="../admin/assets/images/favicon.ico" />
+    <link rel="stylesheet" href="../admin/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../admin/images/favicon.png" />
   </head>
   <body>
     <div class="container-scroller">
       <!-- partial:partials/_navbar.html -->
-      <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-        <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex align-items-center">
           <a class="navbar-brand brand-logo" href="{{url('admin/index')}}">
-            <img src="../admin/assets/images/logo.svg" alt="logo" /> </a>
-          <a class="navbar-brand brand-logo-mini" href="{{url('admin/index')}}">
-            <img src="../admin/assets/images/logo-mini.svg" alt="logo" /> </a>
+            <img src="images/logo.svg" alt="logo" class="logo-dark" />
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="{{url('admin/index')}}"><img src="images/logo-mini.svg" alt="logo" /></a>
         </div>
-        <div class="navbar-menu-wrapper d-flex align-items-center">
-          <ul class="navbar-nav">
-            <li class="nav-item font-weight-semibold d-none d-lg-block">Help : +050 2992 709</li>
-            <li class="nav-item dropdown language-dropdown">
-              <a class="nav-link dropdown-toggle px-2 d-flex align-items-center" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <div class="d-inline-flex mr-0 mr-md-3">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>
-                </div>
-                <span class="profile-text font-weight-medium d-none d-md-block">English</span>
-              </a>
-              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-us"></i>
-                  </div>English
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-fr"></i>
-                  </div>French
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ae"></i>
-                  </div>Arabic
-                </a>
-                <a class="dropdown-item">
-                  <div class="flag-icon-holder">
-                    <i class="flag-icon flag-icon-ru"></i>
-                  </div>Russian
-                </a>
-              </div>
-            </li>
-          </ul>
-          <form class="ml-auto search-form d-none d-md-block" action="#">
-            <div class="form-group">
-              <input type="search" class="form-control" placeholder="Search Here">
-            </div>
-          </form>
-          <ul class="navbar-nav ml-auto">
+        <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
+          <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome</h5>
+          <ul class="navbar-nav navbar-nav-right ml-auto">
+            <form class="search-form d-none d-md-block" action="#">
+              <i class="icon-magnifier"></i>
+              <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+            </form>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-basket-loaded"></i></a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-chart"></i></a></li>
             <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <i class="mdi mdi-bell-outline"></i>
+              <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <i class="icon-speech"></i>
                 <span class="count">7</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
@@ -87,7 +53,7 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
@@ -96,7 +62,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
@@ -105,7 +71,7 @@
                 </a>
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
-                    <img src="../admin/assets/images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                    <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
                   </div>
                   <div class="preview-item-content flex-grow py-2">
                     <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
@@ -114,64 +80,43 @@
                 </a>
               </div>
             </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link count-indicator" id="notificationDropdown" href="#" data-toggle="dropdown">
-                <i class="mdi mdi-email-outline"></i>
-                <span class="count bg-success">3</span>
+            <li class="nav-item dropdown language-dropdown d-none d-sm-flex align-items-center">
+              <a class="nav-link d-flex align-items-center dropdown-toggle" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <div class="d-inline-flex mr-3">
+                  <i class="flag-icon flag-icon-us"></i>
+                </div>
+                <span class="profile-text font-weight-normal">English</span>
               </a>
-              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="notificationDropdown">
-                <a class="dropdown-item py-3 border-bottom">
-                  <p class="mb-0 font-weight-medium float-left">You have 4 new notifications </p>
-                  <span class="badge badge-pill badge-primary float-right">View all</span>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-alert m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Application Error</h6>
-                    <p class="font-weight-light small-text mb-0"> Just now </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-settings m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">Settings</h6>
-                    <p class="font-weight-light small-text mb-0"> Private message </p>
-                  </div>
-                </a>
-                <a class="dropdown-item preview-item py-3">
-                  <div class="preview-thumbnail">
-                    <i class="mdi mdi-airballoon m-auto text-primary"></i>
-                  </div>
-                  <div class="preview-item-content">
-                    <h6 class="preview-subject font-weight-normal text-dark mb-1">New user registration</h6>
-                    <p class="font-weight-light small-text mb-0"> 2 days ago </p>
-                  </div>
-                </a>
+              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-us"></i> English </a>
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-fr"></i> French </a>
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-ae"></i> Arabic </a>
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-ru"></i> Russian </a>
               </div>
             </li>
-            <li class="nav-item dropdown d-none d-xl-inline-block user-dropdown">
+            <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
-                <img class="img-xs rounded-circle" src="../admin/assets/images/faces/face8.jpg" alt="Profile image"> </a>
+                <img class="img-xs rounded-circle ml-2" src="images/faces/face8.jpg" alt="Profile image"> <span class="font-weight-normal"> Henry Klein </span></a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
-                  <img class="img-md rounded-circle" src="../admin/assets/images/faces/face8.jpg" alt="Profile image">
-                  <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
+                  <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
+                  <p class="mb-1 mt-3">Allen Moreno</p>
                   <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                 </div>
-                <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
-                <a class="dropdown-item">Messages<i class="dropdown-item-icon ti-comment-alt"></i></a>
-                <a class="dropdown-item">Activity<i class="dropdown-item-icon ti-location-arrow"></i></a>
-                <a class="dropdown-item">FAQ<i class="dropdown-item-icon ti-help-alt"></i></a>
-                <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-power-off"></i></a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i> Messages</a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i> Activity</a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
               </div>
             </li>
           </ul>
           <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
-            <span class="mdi mdi-menu"></span>
+            <span class="icon-menu"></span>
           </button>
         </div>
       </nav>
@@ -183,183 +128,189 @@
             <li class="nav-item nav-profile">
               <a href="#" class="nav-link">
                 <div class="profile-image">
-                  <img class="img-xs rounded-circle" src="../admin/assets/images/faces/face8.jpg" alt="profile image">
+                  <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="profile image">
                   <div class="dot-indicator bg-success"></div>
                 </div>
                 <div class="text-wrapper">
                   <p class="profile-name">Allen Moreno</p>
-                  <p class="designation">Premium user</p>
+                  <p class="designation">Administrator</p>
+                </div>
+                <div class="icon-container">
+                  <i class="icon-bubbles"></i>
+                  <div class="dot-indicator bg-danger"></div>
                 </div>
               </a>
             </li>
-            <li class="nav-item nav-category">Main Menu</li>
+            <li class="nav-item nav-category">
+              <span class="nav-link">Dashboard</span>
+            </li>
             <li class="nav-item">
-              <a class="nav-link" href="{{url('admin/index')}}">
-                <i class="menu-icon typcn typcn-document-text"></i>
+              <a class="nav-link" href="index.html">
                 <span class="menu-title">Dashboard</span>
+                <i class="icon-screen-desktop menu-icon"></i>
               </a>
+            </li>
+            <li class="nav-item nav-category"><span class="nav-link">Management</span></li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Category</span>
+                <i class="icon-layers menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Add Category</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Show All</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a></li>
+                </ul>
+              </div>
             </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Product Management</span>
-                <i class="menu-arrow"></i>
+                <span class="menu-title">Product</span>
+                <i class="icon-layers menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url('admin/product-add')}}">Add product</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url('admin/product-list')}}">Show all</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="{{url('admin/product-list')}}">Edit/Delete</a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="{{url('admin/product-add')}}">Add Product</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{url('admin/product-list')}}">Show All</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="{{url('admin/product-list')}}">Edit/Delete</a></li>
                 </ul>
               </div>
-            </li> 
+            </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Category Management</span>
-                <i class="menu-arrow"></i>
+                <span class="menu-title">Quantity</span>
+                <i class="icon-layers menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Add category</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Show all</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Add Quantity</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a></li>
                 </ul>
               </div>
-            </li>  
+            </li>
             <li class="nav-item">
               <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Producer Management</span>
-                <i class="menu-arrow"></i>
+                <span class="menu-title">Customer</span>
+                <i class="icon-layers menu-icon"></i>
               </a>
               <div class="collapse" id="ui-basic">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Add producer</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Show all</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Add Customer</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Show All</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a></li>
                 </ul>
               </div>
-            </li> 
+            </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                <i class="menu-icon typcn typcn-coffee"></i>
-                <span class="menu-title">Customer Management</span>
-                <i class="menu-arrow"></i>
+              <a class="nav-link" href="pages/charts/chartist.html">
+                <span class="menu-title">Charts</span>
+                <i class="icon-chart menu-icon"></i>
               </a>
-              <div class="collapse" id="ui-basic">
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/tables/basic-table.html">
+                <span class="menu-title">Tables</span>
+                <i class="icon-grid menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-category"><span class="nav-link">Sample Pages</span></li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <span class="menu-title">General Pages</span>
+                <i class="icon-doc menu-icon"></i>
+              </a>
+              <div class="collapse" id="auth">
                 <ul class="nav flex-column sub-menu">
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/buttons.html">Add customer</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/dropdowns.html">Show all</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="pages/ui-features/typography.html">Edit/Delete</a>
-                  </li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
                 </ul>
               </div>
-            </li>          
+            </li>
+            <li class="nav-item pro-upgrade">
+              <span class="nav-link">
+                <a class="btn btn-block px-0 btn-rounded btn-upgrade" href="https://www.bootstrapdash.com/product/stellar-admin-template/" target="_blank"> <i class="icon-badge mx-2"></i> Upgrade to Pro</a>
+              </span>
+            </li>
           </ul>
         </nav>
-        <!-- partial -->
-        <div class="main-panel">
-          <div class="content-wrapper">
-            <div class="row">
-              <div class="col-md-6 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h3 class="card-title">Add new product</h3>
-                    <form class="forms-sample">
-                      <div class="form-group">
-                        <label for="">Product ID</label>
-                        <input type="text" class="form-control" id="id" name="id" placeholder="Enter product id">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Name</label>
-                        <input type="text" class="form-control" id="name" name="name" placeholder="Enter product name">
-                      </div>
-                      <div class="form-group">
-                        <label for="">Price</label>
-                        <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price">
-                      </div>
-                      <div class="form-group">
-                        <label>File upload</label>
-                        <input type="file" id="image" name="imgage[]" class="file-upload-default">
-                        <div class="input-group col-xs-12">
-                          <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                          <span class="input-group-append">
-                            <button class="file-upload-browse btn btn-info" type="button">Upload</button>
-                          </span>
-                        </div>
-                      </div>
-                      <div class="form-group">
-                        <label for="">Details</label>
-                        <textarea class="form-control" name="details" id="details" cols="30" rows="5"></textarea>
-                      </div>
-                      <div class="form-group">
-                        <label for="">Category</label>
-                        <select name="category" id="category" class="form-control">
-                          @foreach ($cat as $c)
-                            <option value="{{$c->catID}}">{{$c->catName}}</option>
-                          @endforeach
-                        </select>
-                      </div>                      
-                      <button type="submit" class="btn btn-success mr-2">Add new</button>
-                      <a href="{{url('admin/product-list')}}" class="btn btn-danger">Cancel</a>
-                    </form>
+        <div class="col-md-6 grid-margin stretch-card">
+          <div class="card">
+            <div class="card-body">
+              <h4 class="card-title">Product form</h4>
+              @if (Session::has('success'))
+                <div class="alert alert-success" role="alert">
+                    {{Session::get('success')}}
+                </div>
+              @endif
+              <form class="forms-sample" method="POST" action="{{url('admin/product-save')}}">
+                @csrf
+                <div class="form-group">
+                  <label for="id">Product ID</label>
+                  <input type="text" class="form-control" id="id" name="id" placeholder="ProductID" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="ProductName" required>
+                </div>
+                <div class="form-group">
+                  <label for="price">Price</label>
+                  <input type="number" class="form-control" id="price" name="price" placeholder="ProductPrice" required>
+                </div>
+                <div class="form-group">
+                  <label for="details">Details</label>
+                  <textarea name ="details" id="details" class="form-control" name="details" placeholder="ProductDetails"> </textarea>
+                </div>
+                <div class="form-group">
+                  <label for="image">Image</label>
+                  <input type="text" class="file-upload-default" required>
+                  <div class="input-group col-xs-12">
+                    <input type="file" name="image" class="form-control file-upload-info" disabled placeholder="Upload Image" required>
+                    <span class="input-group-append">
+                      <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                    </span>
                   </div>
                 </div>
-              </div>
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select name="category" id="category" class="form-control">
+                    @foreach ($cat as $c)
+                      <option value="{{$c->catID}}">{{$c->catName}}</option>
+                    @endforeach
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                <a href="{{url('admin/product-list')}}" class="btn btn-danger">Cancel</a>
+              </form>
             </div>
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:../../partials/_footer.html -->
-          <footer class="footer">
-            <div class="container-fluid clearfix">
-              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
-              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
-            </div>
-          </footer>
-          <!-- partial -->
         </div>
-        <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
     <!-- plugins:js -->
-    <script src="../admin/assets/vendors/js/vendor.bundle.base.js"></script>
-    <script src="../admin/assets/vendors/js/vendor.bundle.addons.js"></script>
+    <script src="../admin/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
+    <!-- Plugin js for this page -->
+    <script src="../admin/vendors/chart.js/Chart.min.js"></script>
+    <script src="../admin/vendors/moment/moment.min.js"></script>
+    <script src="../admin/vendors/daterangepicker/daterangepicker.js"></script>
+    <script src="../admin/vendors/chartist/chartist.min.js"></script>
+    <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="../admin/assets/js/shared/off-canvas.js"></script>
-    <script src="../admin/assets/js/shared/misc.js"></script>
+    <script src="../admin/js/off-canvas.js"></script>
+    <script src="../admin/js/misc.js"></script>
     <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="../admin/assets/js/demo_1/dashboard.js"></script>
-    <!-- End custom js for this page-->
-    <script src="../admin/assets/js/shared/jquery.cookie.js" type="text/javascript"></script>
+    <!-- Custom js for this page -->
+    <script src="../admin/js/dashboard.js"></script>
+    <script src="../admin/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace( 'details' );																																																																	
+     </script>
+    <!-- End custom js for this page -->
   </body>
 </html>
